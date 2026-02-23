@@ -5,21 +5,21 @@
 class IntendCli < Formula
   desc "CLI for intend.do - manage your intentions from the terminal"
   homepage "https://github.com/dsvolk/intend-cli"
-  version "0.1.1"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/dsvolk/intend-cli/releases/download/v0.1.1/intend-cli_0.1.1_darwin_amd64.tar.gz"
-      sha256 "35d60a5c103b9937c0813f7a876b459eb88d7752f8f04f2a5e6c921f170518fa"
+      url "https://github.com/dsvolk/intend-cli/releases/download/v0.2.0/intend-cli_0.2.0_darwin_amd64.tar.gz"
+      sha256 "4410358cedb3c57d320233de9156a8d33b911a6a7403bb982750eb668c5714be"
 
       define_method(:install) do
         bin.install "intend"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/dsvolk/intend-cli/releases/download/v0.1.1/intend-cli_0.1.1_darwin_arm64.tar.gz"
-      sha256 "3b3f2adcdd029267f03fad9f164a93a757d78a9d0d9436d18a27017f71b75464"
+      url "https://github.com/dsvolk/intend-cli/releases/download/v0.2.0/intend-cli_0.2.0_darwin_arm64.tar.gz"
+      sha256 "35bf03cb84ca54c5a08933cde10c971101fd5b5121e4d8c83043cfef3dea15a4"
 
       define_method(:install) do
         bin.install "intend"
@@ -29,15 +29,15 @@ class IntendCli < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dsvolk/intend-cli/releases/download/v0.1.1/intend-cli_0.1.1_linux_amd64.tar.gz"
-      sha256 "85d5491837cffafbf070155b81580d9f46673b74f0101e4cc8aad82226ec43e8"
+      url "https://github.com/dsvolk/intend-cli/releases/download/v0.2.0/intend-cli_0.2.0_linux_amd64.tar.gz"
+      sha256 "bdb7fa10441da12a59671bc27fbd902aa24c5172510e9075831bbc082a477a14"
       define_method(:install) do
         bin.install "intend"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dsvolk/intend-cli/releases/download/v0.1.1/intend-cli_0.1.1_linux_arm64.tar.gz"
-      sha256 "1a398447018cc9100f024a785e5159cffee27d0d7e17f79e44c709cd7a207d71"
+      url "https://github.com/dsvolk/intend-cli/releases/download/v0.2.0/intend-cli_0.2.0_linux_arm64.tar.gz"
+      sha256 "50ff7e1fc432214961689da831ee0eec48f0bde93bc442285311fb5646e7fb17"
       define_method(:install) do
         bin.install "intend"
       end
