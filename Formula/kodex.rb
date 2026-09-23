@@ -1,19 +1,23 @@
 class Kodex < Formula
   desc "Local coding agent"
   homepage "https://github.com/dsvolk/kodex"
-  version "0.1.2"
+  version "0.155.0"
   license "Apache-2.0"
   depends_on :macos
   depends_on arch: :arm64
 
-  url "https://github.com/dsvolk/kodex/releases/download/v0.1.2/kodex-v0.1.2-aarch64-apple-darwin.tar.gz"
-  sha256 "c9995a16f5a327790b185124bf40c5ec9180fbfbd58c1dfcecba25ed22176a11"
+  url "https://github.com/dsvolk/kodex/releases/download/v0.155.0/kodex-v0.155.0-aarch64-apple-darwin.tar.gz"
+  sha256 "f90cc349dfaac905d8cbcddd4da074d69038ab6b79225af51aa5e6b488542a5d"
 
   def install
-    bin.install "kodex"
+    prefix.install "kodex-package.json", "kodex-path", "kodex-resources"
+    bin.install "bin/kodex", "bin/kodex-code-mode-host"
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/kodex --version")
+    assert_predicate bin/"kodex-code-mode-host", :executable?
+    assert_predicate prefix/"kodex-path/rg", :executable?
+    assert_path_exists prefix/"kodex-package.json"
   end
 end
