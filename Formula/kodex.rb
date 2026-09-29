@@ -1,13 +1,13 @@
 class Kodex < Formula
   desc "Local coding agent"
   homepage "https://github.com/dsvolk/kodex"
-  version "0.155.0"
+  version "0.156.0"
   license "Apache-2.0"
   depends_on :macos
   depends_on arch: :arm64
 
-  url "https://github.com/dsvolk/kodex/releases/download/v0.155.0/kodex-v0.155.0-aarch64-apple-darwin.tar.gz"
-  sha256 "f90cc349dfaac905d8cbcddd4da074d69038ab6b79225af51aa5e6b488542a5d"
+  url "https://github.com/dsvolk/kodex/releases/download/v0.156.0/kodex-v0.156.0-aarch64-apple-darwin.tar.gz"
+  sha256 "3f6a65ec046129dd56c18313312e699d52fb778421836e70e310cd390405baff"
 
   def install
     prefix.install "kodex-package.json", "kodex-path", "kodex-resources"
